@@ -4,6 +4,7 @@ import gql from 'graphql-tag';
 
 import { Loading, Header, LaunchTile } from '../components';
 import { LAUNCH_TILE_DATA } from './launches';
+import ProfileImageUploader from '../components/profile-image-uploader';
 
 export const GET_MY_TRIPS = gql`
   query GetMyTrips {
@@ -29,6 +30,7 @@ export default function Profile() {
   return (
     <Fragment>
       <Header>My Trips</Header>
+      <ProfileImageUploader />
       {data.me && data.me.trips.length ? (
         data.me.trips.map(launch => (
           <LaunchTile key={launch.id} launch={launch} />
