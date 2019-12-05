@@ -11,6 +11,7 @@ export const GET_MY_TRIPS = gql`
     me {
       id
       email
+      profileImage
       trips {
         ...LaunchTile
       }
@@ -29,7 +30,7 @@ export default function Profile() {
 
   return (
     <Fragment>
-      <Header>My Trips</Header>
+      <Header image={data.me.profileImage}>My Trips</Header>
       <ProfileImageUploader />
       {data.me && data.me.trips.length ? (
         data.me.trips.map(launch => (

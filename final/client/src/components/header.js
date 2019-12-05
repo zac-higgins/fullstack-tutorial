@@ -22,7 +22,7 @@ export default function Header({ image, children = 'Space Explorer' }) {
   const avatar = image || pickAvatarByEmail(email);
   return (
     <Container>
-      <Image round={!image} src={avatar} alt="Space dog" />
+      <Image round={!image} src={avatar} />
       <div>
         <h2>{children}</h2>
         <Subheading>{email}</Subheading>
