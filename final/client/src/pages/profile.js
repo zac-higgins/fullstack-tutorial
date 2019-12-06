@@ -31,7 +31,7 @@ export default function Profile() {
   return (
     <Fragment>
       <Header image={data.me.profileImage}>My Trips</Header>
-      <ProfileImageUploader />
+      {/* <ProfileImageUploader /> */}
       {data.me && data.me.trips.length ? (
         data.me.trips.map(launch => (
           <LaunchTile key={launch.id} launch={launch} />
